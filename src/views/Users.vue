@@ -7,7 +7,7 @@
     >
       <md-ripple>
         <md-button class="md-fab md-primary">
-          <md-icon>add</md-icon>
+          <md-icon>person_add</md-icon>
         </md-button>
       </md-ripple>
     </md-card>
@@ -50,8 +50,8 @@ export default {
     ...mapGetters("Users", ["allUsers"])
   },
 
-  async created() {
-    await this.getUsers();
+  created() {
+    this.getUsers();
   },
 
   methods: {
@@ -60,7 +60,7 @@ export default {
       this.showDialog = true;
     },
 
-    ...mapActions("Users", ["getUsers", "addUser", "updateUser", "deleteUser"])
+    ...mapActions("Users", ["getUsers"])
   }
 };
 </script>

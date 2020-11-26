@@ -2,16 +2,20 @@
   <md-card class="user-card">
     <md-card-header>
       <md-card-header-text>
-        <h3 class="md-title">{{ user.username }}</h3>
-        <address class="md-subhead">
-          <a :href="`mailto:${user.email}`">Email: {{ user.email }}</a>
-          <p>City: {{ user.address.city }}</p>
+        <h3 class="md-title user-card__title">{{ user.username }}</h3>
+        <address class="md-subhead user-card__subtitle">
+          <a v-if="user.email" :href="`mailto:${user.email}`">
+            Email: {{ user.email }}
+          </a>
         </address>
       </md-card-header-text>
     </md-card-header>
 
     <md-card-actions class="user-card__actions">
-      <md-button class="md-icon-button md-accent">
+      <md-button
+        @click="deleteUser({ id: user.id })"
+        class="md-icon-button md-accent"
+      >
         <md-icon>delete</md-icon>
       </md-button>
 
@@ -23,6 +27,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "UserCard",
 
@@ -31,6 +37,10 @@ export default {
       type: Object,
       required: true
     }
+  },
+
+  methods: {
+    ...mapActions("Users", ["deleteUser"])
   }
 };
 </script>
