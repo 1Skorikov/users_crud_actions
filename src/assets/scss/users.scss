@@ -1,0 +1,31 @@
+.users-view {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+
+  @media screen and (max-width: 1199px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+
+  // to override the material styles
+  .md-card.users-view__add-button {
+    margin: 0;
+  }
+}
+
+.users-view__add-button {
+  .md-ripple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+  }
+}

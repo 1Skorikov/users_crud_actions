@@ -1,0 +1,21 @@
+.user-card {
+  &:hover .user-card__actions {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.md-app-content .md-card.user-card {
+  margin: 0;
+}
+
+.user-card__actions {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .35s ease-in;
+
+  @media screen and (max-width: 991px) {
+    visibility: visible;
+    opacity: 1;
+  }
+}

@@ -1,32 +1,21 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <md-app id="app" md-waterfall md-mode="overlap">
+    <md-app-toolbar class="md-primary md-large">
+      <div class="md-toolbar-row">
+        <h1 class="md-title">Users</h1>
+      </div>
+    </md-app-toolbar>
+
+    <md-app-content>
+      <router-view></router-view>
+    </md-app-content>
+  </md-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "App"
+};
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<style lang="scss" src="@/assets/scss/index.scss" />
