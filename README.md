@@ -1,5 +1,3 @@
-# edicasoft_test
-
 ## Project setup
 ```
 npm install
